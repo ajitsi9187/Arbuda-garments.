@@ -1,0 +1,212 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+h1, h2, h3, h4 {
+  margin: 0.5em 0;
+}
+input, select, button {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Header & Navigation */
+header {
+  background-color: #ffc107;
+  padding: 10px;
+  text-align: center;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+.toggle {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Search & Category Bar */
+#searchBox {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: block;
+}
+.category-bar {
+  text-align: center;
+  margin-top: 10px;
+}
+.category-bar button {
+  margin: 5px;
+  padding: 6px 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.category-bar button:hover {
+  background: #000;
+  color: white;
+}
+
+/* Product Listing */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+body.dark .card {
+  background: #1e1e1e;
+  color: #ddd;
+}
+
+/* Footer & Contact */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+.contact {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  display: none;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.popup-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+.popup-box input, .popup-box select {
+  width: 90%;
+  margin: 5px auto;
+  display: block;
+}
+.popup-box button {
+  margin-top: 10px;
+  width: 100%;
+  background: #ffc107;
+  border: none;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Cart List */
+#cartItems {
+  text-align: left;
+  padding: 0;
+  list-style: none;
+}
+#cartItems li {
+  margin-bottom: 5px;
+}
+
+/* Dark Mode Elements */
+body.dark header {
+  background-color: #333;
+}
+body.dark .nav-links a {
+  color: #ffc107;
+}
+body.dark .popup-box {
+  background: #1f1f1f;
+  color: #eee;
+}
+body.dark .popup-box input,
+body.dark .popup-box select {
+  background: #333;
+  color: white;
+  border: 1px solid #666;
+}
+body.dark .popup-box button {
+  background: #ffc107;
+  color: black;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-btn {
+    display: block;
+  }
+}

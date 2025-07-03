@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arbuda Garments & Air Pistol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+  <header>
+    <div class="top-bar">
+      <div class="logo">Arbuda E-Shop</div>
+      <nav id="navLinks" class="nav-links">
+        <a href="#" onclick="openPopup('cartPopup')">Cart 🛒</a>
+        <a href="#" onclick="openPopup('orderPopup')">My Orders 📦</a>
+        <a href="#" onclick="openPopup('loginPopup')">Login 🔐</a>
+        <a href="#" onclick="openPopup('registerPopup')">Register 🆕</a>
+        <a href="#" onclick="openPopup('adminPopup')">Admin ➕</a>
+      </nav>
+      <button class="toggle" onclick="toggleDarkMode()">🌙</button>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
+    <input type="text" placeholder="Search Products..." id="searchBox" />
+    <div class="category-bar">
+      <button onclick="filterByCategory('All')">All</button>
+      <button onclick="filterByCategory('Garments')">Garments</button>
+      <button onclick="filterByCategory('Air Pistols')">Air Pistols</button>
+    </div>
+  </header>
+
+  <main id="product-list"></main>
+
+  <section class="contact">
+    <h3>Contact</h3>
+    <p>📧 arbuda.shop@gmail.com | 📞 +91 98765 43210</p>
+    <p>📍 Mount Abu, Rajasthan, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Arbuda Garments & Air Pistol. All rights reserved.</p>
+  </footer>
+
+  <!-- Popups (Login, Register, Cart, Order, Admin, Reviews) -->
+  <div id="loginPopup" class="popup">
+    <div class="popup-box">
+      <span onclick="closePopup('loginPopup')" class="close-btn">×</span>
+      <h2>Login</h2>
+      <input type="text" placeholder="Username" id="username">
+      <input type="password" placeholder="Password" id="password">
+      <button onclick="submitLogin()">Login</button>
+    </div>
+  </div>
+
+  <div id="registerPopup" class="popup">
+    <div class="popup-box">
+      <span onclick="closePopup('registerPopup')" class="close-btn">×</span>
+      <h2>Register</h2>
+      <input type="text" placeholder="New Username" id="newUser">
+      <input type="email" placeholder="Email" id="newEmail">
+      <input type="password" placeholder="Password" id="newPass">
+      <button onclick="submitRegister()">Register</button>
+    </div>
+  </div>
+
+  <div id="cartPopup" class="popup">
+    <div class="popup-box">
+      <span onclick="closePopup('cartPopup')" class="close-btn">×</span>
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <p id="totalAmount">Total: ₹0</p>
+      <button onclick="openPopup('orderPopup')">Proceed to Order</button>
+    </div>
+  </div>
+
+  <div id="orderPopup" class="popup">
+    <div class="popup-box">
+      <span onclick="closePopup('orderPopup')" class="close-btn">×</span>
+      <h2>Place Order</h2>
+      <input type="text" placeholder="Your Name">
+      <input type="text" placeholder="Address">
+      <input type="tel" placeholder="Phone Number">
+      <select>
+        <option>Cash on Delivery</option>
+        <option>UPI</option>
+        <option>Card</option>
+      </select>
+      <button onclick="placeOrder()">Confirm Order</button>
+    </div>
+  </div>
+
+  <div id="adminPopup" class="popup">
+    <div class="popup-box">
+      <span onclick="closePopup('adminPopup')" class="close-btn">×</span>
+      <h2>Add New Product</h2>
+      <input type="text" id="pName" placeholder="Product Name" />
+      <input type="number" id="pPrice" placeholder="Price (₹)" />
+      <input type="text" id="pImage" placeholder="Image URL" />
+      <select id="pCategory">
+        <option value="Garments">Garments</option>
+        <option value="Air Pistols">Air Pistols</option>
+      </select>
+      <button onclick="addProduct()">Add Product</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
